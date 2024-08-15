@@ -59,7 +59,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500">
-      <div className="relative w-full max-w-md p-6 bg-white rounded-md shadow-md">
+      <div className="relative w-full max-w-sm p-6 bg-white rounded-md shadow-md lg:max-w-md">
         <h2 className="mb-8 text-2xl font-bold text-center text-purple-600">
           Login
         </h2>

@@ -93,7 +93,7 @@ const Register: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500">
-      <div className="relative w-full max-w-md p-8 bg-white rounded-lg shadow-xl">
+      <div className="relative w-full max-w-sm p-8 bg-white rounded-lg shadow-xl lg:max-w-md">
         <h2 className="mb-6 text-3xl font-bold text-center text-purple-500">
           Register
         </h2>
