@@ -1,4 +1,4 @@
-## SVG SPrite
+## SVG Sprite Optimization
 
 When optimizing performance, especially with SVG sprite sheets and image rendering, my approach focuses on three key areas:
 
