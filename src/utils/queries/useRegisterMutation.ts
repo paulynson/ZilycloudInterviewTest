@@ -20,11 +20,15 @@ interface RegisterResponse {
 }
 
 const registerUser = async (formData: FormData): Promise<RegisterResponse> => {
-  const { data } = await axios.post("/api/register", formData, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
-  });
+  const { data } = await axios.post(
+    "https://zam.zilytst.com/api/v1/register",
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
   return data;
 };
 

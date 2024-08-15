@@ -14,7 +14,10 @@ interface LoginResponse {
 }
 
 const loginUser = async (payload: LoginPayload): Promise<LoginResponse> => {
-  const { data } = await axios.post("/api/login", payload);
+  const { data } = await axios.post(
+    "https://zam.zilytst.com/api/v1/login",
+    payload
+  );
   return data;
 };
 
