@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "FS_Me";
+  src: local("FS_Me"), url(./fonts/FS_Me-Regular.otf) format("truetype");
+}
+
+html {
+  font-family: FS_Me, serif;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
