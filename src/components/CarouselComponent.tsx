@@ -48,7 +48,12 @@ const SimpleCarousel: React.FC = () => {
       <Slider {...settings}>
         {iconIds.map((iconId, index) => (
           <div key={index} className="flex items-center justify-center px-2">
-            <svg width="118" height="118" viewBox="0 0 118 118">
+            <svg
+              width="118"
+              height="118"
+              viewBox="0 0 118 118"
+              className="px-2"
+            >
               <use href={`/sprite.svg#${iconId}`} />
             </svg>
             <span className="text-center opacity-0">.</span>
