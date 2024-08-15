@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store"; 
+import { RootState } from "../../redux/store";
 
 interface UserProfile {
   data: {
@@ -15,14 +15,11 @@ interface UserProfile {
 }
 
 const fetchUserProfile = async (token: string): Promise<UserProfile> => {
-  const { data } = await axios.get(
-    "https://zam.zilytst.com/api/v1/authenticated/profile",
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const { data } = await axios.get("/api/authenticated/profile", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
   return data;
 };
 
