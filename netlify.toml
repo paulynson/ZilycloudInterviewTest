@@ -1,5 +1,9 @@
 
   [[redirects]]
+  from = "/api/v1/*"
+  to = "https://zam.zilytst.com/"
+  status = 200
+[[redirects]]
   from = "/*"
   to = "/"
   status = 200
@@ -9,3 +13,5 @@
   for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
+
+
