@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRegisterMutation } from "../utils/queries/useRegisterMutation";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaHome } from "react-icons/fa";
 import { toast } from "sonner";
 import { isMobile, isTablet, isBrowser } from "react-device-detect";
 import { Link, useNavigate } from "react-router-dom";
@@ -93,10 +93,19 @@ const Register: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500">
-      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-xl">
+      <div className="relative w-full max-w-md p-8 bg-white rounded-lg shadow-xl">
         <h2 className="mb-6 text-3xl font-bold text-center text-purple-500">
           Register
         </h2>
+        <div>
+          <Link
+            to="/"
+            title="Go to Home Page"
+            className="absolute p-3 bg-white rounded-full shadow-md hover:bg-purple-100 group -right-3 -top-3"
+          >
+            <FaHome className="text-lg group-hover:text-purple-500" />
+          </Link>
+        </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             {...register("name")}

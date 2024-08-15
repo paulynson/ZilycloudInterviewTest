@@ -4,6 +4,7 @@ import Dashboard from "./dashboard/Dashboard";
 import Register from "./auth/Register";
 import PrivateRoute from "./utils/PrivateRoute";
 import Home from "./pages/Home";
+import Page404 from "./pages/Page404";
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Page404 />} />
         <Route
           path="/dashboard"
           element={<PrivateRoute component={Dashboard} />}

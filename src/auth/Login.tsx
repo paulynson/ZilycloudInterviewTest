@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { isMobile, isTablet, isBrowser } from "react-device-detect";
 import { BiLoaderCircle } from "react-icons/bi";
+import { FaHome } from "react-icons/fa";
 
 // Validation Schema
 const schema = yup.object().shape({
@@ -58,10 +59,19 @@ const Login: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500">
-      <div className="w-full max-w-md p-6 bg-white rounded-md shadow-md">
+      <div className="relative w-full max-w-md p-6 bg-white rounded-md shadow-md">
         <h2 className="mb-8 text-2xl font-bold text-center text-purple-600">
           Login
         </h2>
+        <div>
+          <Link
+            to="/"
+            title="Go to Home Page"
+            className="absolute p-3 bg-white rounded-full shadow-md hover:bg-purple-100 group -right-3 -top-3"
+          >
+            <FaHome className="text-lg group-hover:text-purple-500" />
+          </Link>
+        </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">

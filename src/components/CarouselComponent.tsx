@@ -47,7 +47,7 @@ const SimpleCarousel: React.FC = () => {
     <div className="lg:max-w-md max-w-[320px]  my-8 bg-white rounded-md p-3 bg-opacity-[0.01] ">
       <Slider {...settings}>
         {iconIds.map((iconId, index) => (
-          <div key={index} className="flex items-center justify-center px-2">
+          <div key={index} className="flex items-center justify-center px-4">
             <svg
               width="118"
               height="118"
