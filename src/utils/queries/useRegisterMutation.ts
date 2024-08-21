@@ -19,16 +19,17 @@ interface RegisterResponse {
   token: string;
 }
 
+const API_BASE_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:3000/api"
+    : "https://zam.zilytst.com/api/v1";
+
 const registerUser = async (formData: FormData): Promise<RegisterResponse> => {
-  const { data } = await axios.post(
-    "http://localhost:3000/api/register",
-    formData,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    }
-  );
+  const { data } = await axios.post(`${API_BASE_URL}/register`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
   return data;
 };
 
