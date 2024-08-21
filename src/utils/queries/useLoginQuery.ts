@@ -14,11 +14,15 @@ interface LoginResponse {
 }
 
 const loginUser = async (payload: LoginPayload): Promise<LoginResponse> => {
-  const { data } = await axios.post("api/login", payload, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const { data } = await axios.post(
+    `http://localhost:3000/api/login`,
+    payload,
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   return data;
 };
 

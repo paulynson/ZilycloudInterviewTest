@@ -15,12 +15,15 @@ interface UserProfile {
 }
 
 const fetchUserProfile = async (token: string): Promise<UserProfile> => {
-  const { data } = await axios.get("/api/authenticated/profile", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-  });
+  const { data } = await axios.get(
+    "http://localhost:3000/api/authenticated/profile",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    }
+  );
   return data;
 };
 

@@ -7,11 +7,13 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api': {
-        target: 'https://zam.zilytst.com',
+      "/api": {
+        target: "https://zam.zilytst.com",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/api/v1')
-      }
-    }
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, "/api/v1"),
+      },
+    },
+    cors: false,
   },
 });
