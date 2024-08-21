@@ -6,9 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    // proxy: {
-    //   "/api": "https://zam.zilytst.com/api",
-    // },
-    cors: false,
+    proxy: {
+      "/api": "https://zam.zilytst.com/api/v1",
+    },
   },
 });
