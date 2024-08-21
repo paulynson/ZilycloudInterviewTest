@@ -1,7 +1,7 @@
 
   [[redirects]]
   from = "/*"
-  to = "https://zam.zilytst.com/"
+  to = "/"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
