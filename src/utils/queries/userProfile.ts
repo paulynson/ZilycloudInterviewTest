@@ -14,14 +14,9 @@ interface UserProfile {
   };
 }
 
-const API_BASE_URL =
-  import.meta.env.MODE === "development"
-    ? "http://localhost:3000/api"
-    : "https://zam.zilytst.com/api/v1";
-
 const fetchUserProfile = async (token: string): Promise<UserProfile> => {
   const { data } = await axios.get(
-    `${API_BASE_URL}/authenticated/profile`,
+    `https://zam.zilytst.com/api/v1/authenticated/profile`,
     {
       headers: {
         Authorization: `Bearer ${token}`,

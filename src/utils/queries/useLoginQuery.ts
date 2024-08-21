@@ -13,13 +13,8 @@ interface LoginResponse {
   token: string;
 }
 
-const API_BASE_URL =
-  import.meta.env.MODE === "development"
-    ? "http://localhost:3000/api"
-    : "https://zam.zilytst.com/api/v1";
-
 const loginUser = async (payload: LoginPayload): Promise<LoginResponse> => {
-  const { data } = await axios.post(`${API_BASE_URL}/login`, payload, {
+  const { data } = await axios.post(`https://zam.zilytst.com/api/v1/login`, payload, {
     headers: {
       "Content-Type": "application/json",
     },
