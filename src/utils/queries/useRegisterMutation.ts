@@ -21,7 +21,7 @@ interface RegisterResponse {
 
 const registerUser = async (formData: FormData): Promise<RegisterResponse> => {
   const { data } = await axios.post(
-    "https://zam.zilytst.com/api/v1/register",
+    "/api/register",
     formData,
     {
       headers: {

@@ -15,15 +15,12 @@ interface UserProfile {
 }
 
 const fetchUserProfile = async (token: string): Promise<UserProfile> => {
-  const { data } = await axios.get(
-    "https://zam.zilytst.com/api/v1/authenticated/profile",
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const { data } = await axios.get("/api/authenticated/profile", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
   return data;
 };
 
