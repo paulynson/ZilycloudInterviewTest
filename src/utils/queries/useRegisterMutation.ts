@@ -27,8 +27,7 @@ const base = axios.create({
 const registerUser = async (formData: FormData): Promise<RegisterResponse> => {
   const { data } = await base.post(`/api/v1/register`, formData, {
     headers: {
-      "Content-Type": "application/json",
-      accept: "application/json",
+      "Content-Type": "multipart/form-data",
     },
   });
   return data;
