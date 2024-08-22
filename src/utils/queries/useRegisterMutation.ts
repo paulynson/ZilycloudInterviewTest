@@ -2,6 +2,7 @@ import { useMutation } from "react-query";
 import axios, { AxiosError } from "axios";
 import { useDispatch } from "react-redux";
 import { setToken } from "../../redux/store/authSlice";
+import { serviceType } from "../baseUrl";
 
 interface RegisterPayload {
   name: string;
@@ -19,10 +20,15 @@ interface RegisterResponse {
   token: string;
 }
 
+const base = axios.create({
+  baseURL: serviceType,
+});
+
 const registerUser = async (formData: FormData): Promise<RegisterResponse> => {
-  const { data } = await axios.post(`https://zam.zilytst.com/api/v1/register`, formData, {
+  const { data } = await base.post(`/api/v1/register`, formData, {
     headers: {
-      "Content-Type": "multipart/form-data",
+      "Content-Type": "application/json",
+      accept: "application/json",
     },
   });
   return data;

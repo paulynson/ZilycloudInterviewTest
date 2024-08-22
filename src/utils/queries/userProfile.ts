@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
+import { serviceType } from "../baseUrl";
 
 interface UserProfile {
   data: {
@@ -14,16 +15,18 @@ interface UserProfile {
   };
 }
 
+const base = axios.create({
+  baseURL: serviceType,
+});
+
 const fetchUserProfile = async (token: string): Promise<UserProfile> => {
-  const { data } = await axios.get(
-    `https://zam.zilytst.com/api/v1/authenticated/profile`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const { data } = await base.get(`/api/v1/authenticated/profile`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+      accept: "application/json",
+    },
+  });
   return data;
 };
 
